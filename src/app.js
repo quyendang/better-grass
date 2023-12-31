@@ -1,5 +1,6 @@
+const globalAgent = require('global-agent');
+globalAgent.bootstrap();
 const WebSocket = require("ws");
-const tunnel = require("global-tunnel-ng");
 const { v5: uuidv5, v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const path = require("path");
@@ -18,10 +19,6 @@ const {
 const { prettifyHeaderKey } = require("./utils");
 
 const getUnixTimestamp = () => Math.floor(Date.now() / 1000);
-tunnel.initialize({
-  host: "unmetered.residential.proxyrack.net",
-  port: 10249,
-});
 let websockets = {};
 let cookieJars = {};
 let retries = 0;
