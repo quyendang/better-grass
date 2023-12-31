@@ -1,5 +1,10 @@
 const globalAgent = require('global-agent');
-globalAgent.bootstrap();
+globalAgent.bootstrap({
+  proxy: {
+    http: 'http://siunhanpjpj-refreshMinutes-60:a2667b-dd5e24-c96819-96f84c-776e05@unmetered.residential.proxyrack.net:10249',
+    https: 'http://siunhanpjpj-refreshMinutes-60:a2667b-dd5e24-c96819-96f84c-776e05@unmetered.residential.proxyrack.net:10249',
+  },
+});
 const WebSocket = require("ws");
 const { v5: uuidv5, v4: uuidv4 } = require("uuid");
 const fs = require("fs");
